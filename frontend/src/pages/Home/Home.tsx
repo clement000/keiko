@@ -1,10 +1,24 @@
 import styles from "./Home.module.css"
 
+interface Pokemon {
+  name: string
+  code: number
+}
+
+const pokemon: Pokemon = {
+  name: "Carapuce",
+  code: 7,
+}
+
 export const Home = () => {
   return (
-    <div className={styles.intro}>
-      <div>Bienvenue sur ton futur pokédex !</div>
-      <div>Tu vas pouvoir apprendre tout ce qu'il faut sur React et attraper des pokemons !</div>
+    <div>
+      <img
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+        alt="Pokemon image"
+      ></img>
+      <p>Name : {pokemon.name}</p>
+      <p>Code : {pokemon.code}</p>
     </div>
   )
 }
