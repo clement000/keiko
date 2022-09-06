@@ -10,7 +10,12 @@ interface Pokemon {
   weight: number
 }
 
+function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 const fetchPokemons = async () => {
+  await sleep(1000)
   const apiResponse = await fetch("http://localhost:8000/pokemons", { headers: { accept: "application/json" } })
   const pokemonList = await apiResponse.json()
   return pokemonList
@@ -19,19 +24,24 @@ const fetchPokemons = async () => {
 export const Home = () => {
   const [pokemonList, updatePokemonList] = React.useState<Pokemon[]>([])
   const [isLoading, setIsLoading] = React.useState(true)
+  const [apiCallFailed, setApiCallFailed] = React.useState(false)
 
   React.useEffect(() => {
-    fetchPokemons().then(pokemons => {
-      updatePokemonList(pokemons)
-      setIsLoading(false)
-    })
+    fetchPokemons()
+      .then(pokemons => {
+        updatePokemonList(pokemons)
+        setIsLoading(false)
+      })
+      .catch(() => setApiCallFailed(true))
   }, [])
 
   return (
     <div className={styles.intro}>
       <h1>Pokedex</h1>
       <div className={styles.pokemonCards}>
-        {isLoading ? (
+        {apiCallFailed ? (
+          <p>Something went wrong while retrieveing the pokemons from the remote API</p>
+        ) : isLoading ? (
           <Loader />
         ) : (
           pokemonList.map(pokemon => {
