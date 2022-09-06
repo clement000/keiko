@@ -1,0 +1,16 @@
+.intro {
+  border-style: double;
+  border-width: 10px;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.intro p {
+  text-align: center;
+}
+
+.intro img {
+  margin: auto;
+  display: block;
+}

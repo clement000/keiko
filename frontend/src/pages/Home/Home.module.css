@@ -6,6 +6,16 @@
   padding: 10px;
 }
 
+.intro .pokemonCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.intro h1 {
+  font-weight: bold;
+}
+
 .input {
   border-width: 2px;
   border-style: inset;
