@@ -15,7 +15,7 @@ function sleep(ms: number) {
 }
 
 const fetchPokemons = async () => {
-  await sleep(1000)
+  await sleep(1500)
   const apiResponse = await fetch("http://localhost:8000/pokemons", { headers: { accept: "application/json" } })
   const pokemonList = await apiResponse.json()
   return pokemonList
