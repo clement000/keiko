@@ -1,0 +1,27 @@
+div.intro {
+  border-style: double;
+  border-width: 10px;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  display: block;
+  margin: auto;
+}
+
+.intro p {
+  text-align: center;
+}
+
+.intro h1 {
+  text-align: center;
+}
+
+.image {
+  display: "flex";
+  flex-wrap: wrap;
+  width: 300px;
+}
+
+.image img {
+  width: 150px;
+}
