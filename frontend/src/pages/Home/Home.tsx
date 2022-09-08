@@ -1,9 +1,9 @@
 // questions :
 // comment gérer les string | undefined correctement ?
-// comment marche le routing ? quand on change le path ça ne recharge pas la page, donc j'utilise un hook, mais du coup ce n'est pas la même logique que la première fois, et donc je n'ai pas de loader.
+// qst sur les link et le bon moyen de faire ça
 
 import React from "react"
-import { Pokemon } from "../../components/PokemonCard/PokemonCard"
+import { PokemonCard } from "../../components/PokemonCard/PokemonCard"
 import styles from "./Home.module.css"
 import { Loader } from "../../components/Loader/Loader"
 import { Link, useParams } from "react-router-dom"
@@ -50,7 +50,7 @@ export const Home = () => {
     <div className={styles.intro}>
       <h1>Pokedex</h1>
       <div className={styles.pageArrows}>
-        <Link to={"/pokedex/" + Math.max(parseInt(page!) - 1, 1).toString()}>{"<"}</Link>
+        <Link to={"/pokedex/" + Math.max(parseInt(page!) - 1).toString()}>{"<"}</Link>
         <Link to={"/pokedex/" + Math.min(parseInt(page!) + 1, 10).toString()}>{">"}</Link>
       </div>
       <div className={styles.pokemonCards}>
@@ -61,7 +61,7 @@ export const Home = () => {
         ) : (
           pokemonList.map(pokemon => {
             return (
-              <Pokemon
+              <PokemonCard
                 name={pokemon.name}
                 id={pokemon.id}
                 key={pokemon.id}
