@@ -9,7 +9,7 @@ export const App = () => {
     <Root>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/pokedex/1" />} />
+          <Route path="/" element={<Navigate to="/pokedex/0" />} />
           <Route path="/pokedex/:page" element={<Home />} />
           <Route path="/pokemon/:id" element={<Pokemon />} />
         </Routes>

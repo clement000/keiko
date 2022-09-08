@@ -1,21 +1,22 @@
-.intro {
+.pokemonCard {
   border-style: double;
   border-width: 10px;
   width: 300px;
   padding: 10px;
   margin: 10px;
+  display: block;
 }
 
-a:-webkit-any-link {
+a.pokemonCard:-webkit-any-link {
   text-decoration: none;
   color: inherit;
 }
 
-.intro p {
+.pokemonCard p {
   text-align: center;
 }
 
-.intro img {
+.pokemonCard img {
   margin: auto;
   display: block;
 }

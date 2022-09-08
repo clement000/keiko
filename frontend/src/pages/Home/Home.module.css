@@ -12,6 +12,13 @@
   flex-wrap: wrap;
 }
 
+div.test {
+  border-style: dotted;
+  border-width: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
 .intro h1 {
   font-weight: bold;
 }
@@ -28,4 +35,9 @@ div.pageArrows {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+}
+
+div.pageArrows a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
 }
